@@ -6,18 +6,18 @@ function App() {
   const newArray=buttonArray.map(button =>{
     return <button onClick ={()=>displaying(button)}className={`rounded-full ${ "0".includes(button)?"col-span-2 w-38 bg-amber-500" : ["AC","+/-","%","-","+","."].includes(button)?"bg-amber-500" : ["7","8","9","6","5","4","3","2","1"].includes(button) ? "bg-purple-300" : "bg-green-300" } border size-15`}>{button}</button>
   })
-  let [display,useDisplay]=React.useState("")
-   let [firstOperand,usefirstOperand]=React.useState("")
-    let [operand,useOperand]=React.useState("")
+  const [display,setDisplay]=useState("")
+  //  const [firstOperand,setFirstoperand]=useState("")
+  //   const [operand,setOperand]=React.useState("")
   function displaying(button:string){
-    useDisplay( prevbutton=> prevbutton+button)
+    setDisplay( prevbutton=> prevbutton+button)
   }
-  function changeFirstOperand(button:string){
-    usefirstOperand(prev=>prev+button)
-  }
-  function changeOperand(button:string){
-    useOperand(button)
-  }
+  // function changeFirstOperand(button:string){
+  //   setFirstoperand(prev=>prev+button)
+  // }
+  // function changeOperand(button:string){
+  //   setOperand(button)
+  // }
   return (
     <>
       <div className="bg-black">
